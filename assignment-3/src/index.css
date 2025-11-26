@@ -13,7 +13,7 @@
             linear-gradient(180deg, rgba(10, 8, 22, 0.96) 0%, rgba(5, 3, 18, 1) 70%);
     --surface-background: linear-gradient(135deg, rgba(17, 17, 32, 0.88), rgba(13, 18, 38, 0.68));
     --surface-border: rgba(255, 255, 255, 0.06);
-    --nav-background: linear-gradient(120deg, rgba(16, 16, 32, 0.75), rgba(10, 10, 22, 0.35));
+    --nav-background: linear-gradient(120deg, rgba(16, 16, 32), rgba(10, 10, 22));
     --nav-border: rgba(255, 255, 255, 0.08);
     --nav-shadow: 0 16px 40px rgba(3, 6, 20, 0.45);
     --control-surface: rgba(255, 255, 255, 0.04);
@@ -48,7 +48,7 @@
             linear-gradient(180deg, rgba(245, 244, 255, 0.95) 0%, rgba(228, 230, 255, 0.9) 70%);
     --surface-background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(240, 241, 255, 0.78));
     --surface-border: rgba(131, 135, 200, 0.24);
-    --nav-background: rgba(255, 255, 255, 0.82);
+    --nav-background: rgba(255, 255, 255);
     --nav-border: rgba(124, 128, 190, 0.24);
     --nav-shadow: 0 18px 40px rgba(24, 32, 84, 0.18);
     --control-surface: rgba(12, 22, 64, 0.07);
