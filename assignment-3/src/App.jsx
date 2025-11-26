@@ -4,6 +4,7 @@ import './App.css';
 import Hero from './components/hero/Hero.jsx';
 import About from './components/about/About.jsx';
 import Projects from './components/projects/Projects.jsx';
+import GithubAPI from "./components/github-api/GithubAPI.jsx";
 import Skills from './components/skills/Skills.jsx';
 import Contact from './components/contact/Contact.jsx';
 import ClickSpark from './components/clickspark/ClickSpark.jsx';
@@ -24,8 +25,7 @@ const resolveInitialTheme = () => {
 };
 
 function App() {
-    const [theme] = useState(resolveInitialTheme);
-
+    const [theme, setTheme] = useState(resolveInitialTheme);
 
     useEffect(() => {
         document.documentElement.classList.add('has-js');
@@ -34,6 +34,12 @@ function App() {
             document.documentElement.classList.remove('has-js');
         };
     }, []);
+
+    useEffect(() => {
+        // apply theme attribute on mount and whenever it changes
+        document.documentElement.setAttribute('data-theme', theme);
+        window.localStorage.setItem('theme-preference', theme);
+    }, [theme]);
 
     return (
         <div className="app-shell">
@@ -45,11 +51,12 @@ function App() {
                 duration={400}
             >
             <div className="app-background" aria-hidden="true" />
-                <Hero/>
+                <Hero theme={theme} setTheme={setTheme}/>
 
             <main className="page-content">
                 <About />
                 <Skills />
+                <GithubAPI/>
                 <Projects theme={theme} />
                 <Contact />
             </main>
