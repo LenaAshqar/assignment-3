@@ -25,7 +25,7 @@ const getGreeting = () => {
     return 'Good evening';
 };
 
-function Hero() {
+function Hero({theme, setTheme}) {
     const [greeting, setGreeting] = useState(getGreeting);
 
     useEffect(() => {
@@ -38,7 +38,7 @@ function Hero() {
 
     return(
         <header className="hero" id="home">
-            <Nav/>
+            <Nav theme={theme} setTheme={setTheme}/>
 
             <div className="hero-grid">
                 <div className="hero-copy">

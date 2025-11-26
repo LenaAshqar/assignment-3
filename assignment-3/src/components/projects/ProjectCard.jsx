@@ -30,19 +30,19 @@ const ProjectCard = ({
         }
     };
 
-    const resolvedImage = useMemo(() => {
+    const resolvedImage = (() => {
         if (theme === 'light') {
             return imageLight ?? image ?? imageDark;
         }
 
         return imageDark ?? image ?? imageLight;
-    }, [theme, image, imageDark, imageLight]);
+    }) ();
 
     return (
         <article className={`project-card surface-card ${className}`.trim()} {...rest}>
             <div className="project-media">
                 {resolvedImage ? (
-                    <img src={resolvedImage} alt={title} loading="lazy" />
+                    <img src={resolvedImage} alt={title} loading="lazy" key={`${title}-img-${theme}`} />
                         ) : (
                     <div className="project-media--placeholder" aria-hidden="true">
                         <span>{title.slice(0, 1)}</span>

@@ -8,23 +8,7 @@ const NAV_ITEMS = [
     { label: 'Contact', href: '#contact' }
 ];
 
-const resolveInitialTheme = () => {
-    if (typeof window === 'undefined') {
-        return 'dark';
-    }
-
-    const stored = window.localStorage.getItem('theme-preference');
-    if (stored === 'light' || stored === 'dark') {
-        return stored;
-    }
-
-    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
-    return prefersDark ? 'dark' : 'light';
-};
-
-function Nav(){
-
-    const [theme, setTheme] = useState(resolveInitialTheme);
+function Nav({theme, setTheme}){
     const [isNavOpen, setIsNavOpen] = useState(false);
     const navMenuId = useId();
     const navRef = useRef(null);
